@@ -24,6 +24,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    
+    - run: npm ci
+    - run: npm run build --if-present   
+     
     - name: Set up Java (CoPilot)
       uses: actions/setup-java@v1
       with:
